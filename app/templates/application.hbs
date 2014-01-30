@@ -1,3 +1,15 @@
-<h2>Ballin-octo-tribble</h2>
-
-{{outlet}}
+<nav>
+	<ul>
+    <li>{{#link-to 'everyone' classNames='dribbble'}} Dribbble{{/link-to}}</li>
+    <li>{{#link-to 'popular'}} Popular{{/link-to}}</li>
+    <li>{{#link-to 'debuts'}} Debuts{{/link-to}}</li>
+    <li>{{#link-to 'everyone'}} Everyone{{/link-to}}</li>
+    <li>{{#link-to ''}} Following{{/link-to}}</li>
+	</ul>
+</nav>
+<div class='content'>
+  {{outlet}}
+</div>
+<footer>
+  <small>made by iest</small>
+</footer>

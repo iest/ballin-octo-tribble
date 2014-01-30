@@ -1,0 +1,113 @@
+/* ----------------------------
+simple reset
+---------------------------- */
+
+html, body, ul, ol, li, form, fieldset, legend
+  margin 0
+  padding 0
+
+h1, h2, h3, h4, h5, h6, p
+  margin-top 0
+
+fieldset, img
+  border 0
+
+legend 
+  color #000
+
+li
+  list-style none
+
+sup
+  vertical-align text-top
+
+sub
+  vertical-align text-bottom
+
+table
+  border-collapse collapse
+  border-spacing 0
+
+caption, th, td
+  text-align left
+  vertical-align top
+  font-weight normal
+
+input, textarea, select
+  font-size 110%
+  line-height 1.1
+
+abbr, acronym
+  border-bottom .1em dotted
+  cursor help
+
+/* custom styles */
+
+*
+  text-rendering optimizeLegibility
+  -webkit-box-sizing border-box
+  -moz-box-sizing border-box
+  box-sizing border-box
+
+a, a:visited
+  text-decoration none
+  color inherit
+
+/* colors */
+$dark = #444
+$pink = #ea4c89
+
+/* constants */
+$barHeight = 2.375em
+$shotWidth = 12.5em
+
+body
+  background-color lighten($dark, 40%)
+
+nav
+  position fixed
+  top 0
+  width 100%
+  background-color $dark
+  color white
+  height $barHeight
+  line-height 2.375em
+  ul
+    margin 0 auto
+    padding 0
+    max-width 50em
+  li
+    list-style none
+    display inline-block
+    margin 0
+    a
+      padding 0.625em
+      text-align center
+      &.active
+        background-color lighten($dark, 20%)
+      &.dribbble
+        background-color white
+        color $pink
+
+.content
+  margin-top $barHeight
+  // padding 0.625em
+  overflow hidden
+  img
+    margin 0
+    width 50%
+    float left
+  for x in (3..10)
+    @media screen and (min-width: $shotWidth * x)
+      img
+        width (100/x)%
+
+footer
+  border-top 0.3em solid lighten($dark, 43%)
+  text-align center
+  padding 0.625em
+  color lighten($dark, 80%)
+    
+// @keyframes domChanged { from { background yellow } }
+// @-webkit-keyframes domChanged { from { background yellow } }
+// .ember-view { animation domChanged 1s -webkit-animation: domChanged 1s }
